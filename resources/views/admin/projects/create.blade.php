@@ -1,3 +1,5 @@
+@extends('layouts.admin')
+
 @section('content')
 
 <h1 class="py-3">Create a new project</h1>
@@ -22,13 +24,13 @@
 
     <div class="mb-3">
         <label for="duration" class="form-label">Duration</label>
-        <input type="text" class="form-control @error('duration') is-invalid @enderror" name="duration" id="duration" aria-describedby="durationHelper" placeholder="Learn php">
+        <input type="text" class="form-control @error('duration') is-invalid @enderror" name="duration" id="duration" aria-describedby="durationHelper" placeholder="3 months">
         <small id="durationHelper" class="form-text text-muted">Type the project duration</small>
     </div>
 
     <div>
         <select class="form-select" name="status" aria-label="Default select example">
-            <option selected>Open this select menu</option>
+            <option selected>Project Status</option>
             <option value="1">Done</option>
             <option value="2">In Progress</option>
             <option value="3">Abandoned</option>

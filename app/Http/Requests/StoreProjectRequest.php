@@ -26,6 +26,7 @@ class StoreProjectRequest extends FormRequest
         return [
             'title' => ['required', 'unique:projects'],
             'description' => ['nullable'],
+            'slug' => ['nullable'],
             'duration' => ['nullable'],
             'status' => ['nullable'],
             'start_date' => ['nullable'],
