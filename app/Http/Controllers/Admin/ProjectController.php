@@ -92,7 +92,7 @@ class ProjectController extends Controller
 
             $val_data['slug'] = $slug;
 
-            Project::create($val_data);
+            $project->update($val_data);
             
             return to_route('admin.projects.index')->with("message", "Project updated successfully");
         }

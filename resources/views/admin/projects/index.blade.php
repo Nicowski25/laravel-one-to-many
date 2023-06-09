@@ -34,10 +34,10 @@
         <td scope="row">{{ $project->start_date }}</td>
         <td scope="row">{{ $project->end_date }}</td>
         <td scope="row">
-          <a class="text-decoration-none btn btn-success text-dark" href="{{ route('admin.projects.show', $project->id) }}">
+          <a class="text-decoration-none btn btn-success text-dark" href="{{ route('admin.projects.show', $project->slug) }}">
             <i class="fa-regular fa-eye fa-fw"></i>
           </a>
-          <a class="text-decoration-none btn btn-warning text-dark my-2" href="{{ route('admin.projects.edit', $project->id) }}">
+          <a class="text-decoration-none btn btn-warning text-dark my-2" href="{{ route('admin.projects.edit', $project->slug) }}">
             <i class="fa-regular fa-pen-to-square fa-fw"></i>
           </a>
           <a class="text-decoration-none btn btn-danger text-dark" href="#">
