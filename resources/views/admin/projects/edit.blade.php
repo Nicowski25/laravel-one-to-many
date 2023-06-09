@@ -1,3 +1,4 @@
+@extends('layouts.admin')
 @section('content')
 
 <h1 class="py-3">Edit the project</h1>
@@ -5,7 +6,7 @@
 
 @include('partials.validation_errors')
 
-<form action="{{route('admin.projects.edit')}}" method="post">
+<form action="{{route('admin.projects.update, $project')}}" method="post">
     @csrf
 
     <div class="mb-3">
