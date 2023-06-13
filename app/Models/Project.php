@@ -20,6 +20,6 @@ class Project extends Model
     }
 
     public function type(): BelongsTo {
-        return $this->belongsTo(Type::class);
+        return $this->belongsTo(Type::class, 'type_id');
     }
 }

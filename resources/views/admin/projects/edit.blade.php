@@ -16,8 +16,8 @@
     </div>
 
     <div class="mb-3">
-        <label for="types_id " class="form-label">Types </label>
-        <select class="form-select @error('type_id') is-invalid @enderror" name="types_id " id="types_id ">
+        <label for="type_id " class="form-label">Types</label>
+        <select class="form-select @error('type_id') is-invalid @enderror" name="type_id " id="type_id ">
             <option value="">Select one</option>
             @foreach ($types as $type)
                 <option value="{{$type->id}}" {{ $type->id == old('type_id', '$project->type->id') ? 'selected' : '' }}> {{ $type->name }} </option>
@@ -58,7 +58,7 @@
         <small id="durationHelper" class="form-text text-muted">Select the project end</small>
     </div>
 
-    <button type="submit" class="btn btn-dark">Edit Project</button>
+    <button type="submit" class="btn btn-dark mb-4">Edit Project</button>
 
 </form>
 

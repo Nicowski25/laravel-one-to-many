@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateProjectRequest extends FormRequest
 {
@@ -24,13 +25,14 @@ class UpdateProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => ['required', 'unique:projects'],
+            'title' => ['required', Rule::unique('projects', 'title')->ignore($this->project)],
             'description' => ['nullable'],
             'slug' => ['nullable'],
             'duration' => ['nullable'],
             'status' => ['nullable'],
             'start_date' => ['nullable'],
-            'end_date' => ['nullable']
+            'end_date' => ['nullable'],
+            'type' => ['exist:types,id'],
         ];
     }
 }
