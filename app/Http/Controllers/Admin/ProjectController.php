@@ -6,6 +6,7 @@ use App\Models\Project;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
+use App\Models\Type;
 use Illuminate\Http\Request;
 use SebastianBergmann\CodeCoverage\Report\Xml\Project as XmlProject;
 
@@ -30,7 +31,9 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.projects.create');
+        $types = Type::orderByDesc('id')->get();
+
+        return view('admin.projects.create', compact('types'));
     }
 
     /**
@@ -42,14 +45,16 @@ class ProjectController extends Controller
     public function store(StoreProjectRequest $request)
     {
         {
+            //validate the req
             $val_data = $request->validated();
-
+            //generate title slug
             $slug = Project::generateSlug($val_data['title']);
-
-            $val_data['slug'] = $slug;
-
-            Project::create($val_data);
             
+            $val_data['slug'] = $slug;
+            
+            //create new proj
+            Project::create($val_data);
+            //redirect back to route
             return to_route('admin.projects.index')->with("message", "Project created successfully");
         }
     }
@@ -73,7 +78,9 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.projects.edit', compact('project'));
+        $types = Type::orderByDesc('id')->get();
+
+        return view('admin.projects.edit', compact('project', 'types'));
     }
 
     /**

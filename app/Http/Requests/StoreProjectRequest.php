@@ -30,7 +30,8 @@ class StoreProjectRequest extends FormRequest
             'duration' => ['nullable'],
             'status' => ['nullable'],
             'start_date' => ['nullable'],
-            'end_date' => ['nullable']
+            'end_date' => ['nullable'],
+            'type_id' => ['exists:types,id']
         ];
     }
 }

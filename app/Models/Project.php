@@ -6,14 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Str;
-use Mockery\Matcher\Type;
 
 class Project extends Model
 {
     use HasFactory;
 
     
-    protected $fillable = ['title', 'description', 'duration','slug', 'status', 'start_date', 'end_date'];
+    protected $fillable = ['title', 'description', 'duration','slug', 'status', 'start_date', 'end_date', 'type_id'];
 
     public static function generateSlug($title)
     {
