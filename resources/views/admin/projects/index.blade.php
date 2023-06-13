@@ -16,7 +16,7 @@
         <th scope="col">ID</th>
         <th scope="col">Title</th>
         <th scope="col">Description</th>
-        <th scope="col">Duration</th>
+        <th scope="col">Week Duration</th>
         <th scope="col">Status</th>
         <th scope="col">Starting Date</th>
         <th scope="col">Ending Date</th>
