@@ -7,7 +7,7 @@
         <div class="card-header">
             <h2>{{ $project->title }}</h2>
             <div>
-                <span class="badge bg-primary">{{$project->type?->name}}</span>
+                <span class="badge bg-primary">{{ $project->type?->name }}</span>
             </div>
         </div>
         <div class="card-body">

@@ -55,7 +55,7 @@ class ProjectController extends Controller
             //create new proj
             Project::create($val_data);
             //redirect back to route
-            return to_route('admin.projects.index')->with("message", "Project created successfully");
+            return to_route('admin.projects.index', compact('types'))->with("message", "Project created successfully");
         }
     }
 
@@ -78,7 +78,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        $types = Type::orderByDesc('id')->get();
+        $types = Type::orderBy('name')->get();
 
         return view('admin.projects.edit', compact('project', 'types'));
     }

@@ -32,7 +32,7 @@ class UpdateProjectRequest extends FormRequest
             'status' => ['nullable'],
             'start_date' => ['nullable'],
             'end_date' => ['nullable'],
-            'type' => ['exist:types,id'],
+            'type_id' => ['exist:types,id', 'nullable'],
         ];
     }
 }

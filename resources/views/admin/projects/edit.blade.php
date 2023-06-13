@@ -20,7 +20,7 @@
         <select class="form-select @error('type_id') is-invalid @enderror" name="type_id " id="type_id ">
             <option value="">Select one</option>
             @foreach ($types as $type)
-                <option value="{{$type->id}}" {{ $type->id == old('type_id', '$project->type->id') ? 'selected' : '' }}> {{ $type->name }} </option>
+                <option value="{{$type->id}}" {{ $type->id == old('type_id', '') ? 'selected' : '' }}> {{ $type->name }} </option>
             @endforeach
         </select>
     </div>
@@ -39,10 +39,10 @@
 
     <div>
         <select class="form-select" name="status" value="{{ old('status', $project->status) }}" aria-label="Default select example">
-            <option selected>Open this select menu</option>
-            <option value="1">Done</option>
-            <option value="2">In Progress</option>
-            <option value="3">Abandoned</option>
+            <option>Open this select menu</option>
+            <option value="Done">Done</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Abandoned">Abandoned</option>
         </select>
     </div>
 

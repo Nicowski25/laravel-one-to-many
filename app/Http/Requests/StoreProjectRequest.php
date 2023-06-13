@@ -32,7 +32,7 @@ class StoreProjectRequest extends FormRequest
             'status' => ['nullable'],
             'start_date' => ['nullable'],
             'end_date' => ['nullable'],
-            'type' => ['exists:types,id']
+            'type_id' => ['exists:types,id', 'nullable']
         ];
     }
 }

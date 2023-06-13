@@ -15,6 +15,7 @@
       <tr class="align-middle">
         <th scope="col">ID</th>
         <th scope="col">Title</th>
+        <th scope="col">Type</th>
         <th scope="col">Description</th>
         <th scope="col">Week Duration</th>
         <th scope="col">Status</th>
@@ -28,6 +29,7 @@
       <tr>
         <td scope="row">{{ $project->id }}</td>
         <td scope="row">{{ $project->title }}</td>
+        <td scope="row">{{ $project->type?->name }}</td>
         <td scope="row">{{ $project->description }}</td>
         <td scope="row">{{ $project->duration }}</td>
         <td scope="row">{{ $project->status }}</td>
