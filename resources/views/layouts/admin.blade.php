@@ -55,7 +55,7 @@
                             <li class="nav-item">
                             <a class="nav-link {{Route::currentRouteName() == 'admin.types.index' ? 'bg-dark' : ''}}" href="{{route('admin.types.index')}}">
                                     <i class="fa-solid fa-bookmark"></i>
-                                    {{__('Projects')}}
+                                    {{__('Types')}}
                                 </a>
                             </li>
 

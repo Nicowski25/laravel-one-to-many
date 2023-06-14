@@ -17,7 +17,7 @@
 
     <div class="mb-3">
         <label for="type_id " class="form-label">Types</label>
-        <select class="form-select @error('type_id') is-invalid @enderror" name="type_id " id="type_id ">
+        <select class="form-select @error('type_id') is-invalid @enderror" name="type_id" id="type_id">
             <option value="">Select one</option>
             @foreach ($types as $type)
                 <option value="{{$type->id}}" {{ $type->id == old('type_id', '') ? 'selected' : '' }}> {{ $type->name }} </option>
